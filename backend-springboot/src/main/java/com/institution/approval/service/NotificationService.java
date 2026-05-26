@@ -1,7 +1,7 @@
 package com.institution.approval.service;
 
 import com.institution.approval.document.Notification;
-import com.institution.approval.repository.NotificationRepository;
+import com.institution.approval.repository.mongo.NotificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

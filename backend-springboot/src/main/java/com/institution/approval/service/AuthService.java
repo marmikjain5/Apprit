@@ -1,17 +1,18 @@
 package com.institution.approval.service;
 
-import com.institution.approval.dto.LoginRequest;
 import com.institution.approval.dto.JwtResponse;
-import com.institution.approval.dto.SignupRequest;
+import com.institution.approval.dto.LoginRequest;
 import com.institution.approval.dto.MessageResponse;
+import com.institution.approval.dto.SignupRequest;
 import com.institution.approval.entity.Department;
 import com.institution.approval.entity.Role;
 import com.institution.approval.entity.User;
 import com.institution.approval.repository.DepartmentRepository;
 import com.institution.approval.repository.RoleRepository;
 import com.institution.approval.repository.UserRepository;
-import com.institution.approval.security.JwtUtils;
 import com.institution.approval.security.UserDetailsImpl;
+import com.institution.approval.security.jwt.JwtUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -47,25 +48,33 @@ public class AuthService {
     private JwtUtils jwtUtils;
 
     public JwtResponse authenticateUser(LoginRequest loginRequest) {
+
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+                new UsernamePasswordAuthenticationToken(
+                        loginRequest.getUsername(),
+                        loginRequest.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = jwtUtils.generateJwtToken(authentication);
 
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        String jwt = jwtUtils.generateJwtToken(userDetails.getUsername());
+
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-        return new JwtResponse(jwt,
+        return new JwtResponse(
+                jwt,
                 userDetails.getId(),
                 userDetails.getUsername(),
                 userDetails.getEmail(),
-                roles);
+                roles,
+                userDetails.getDeptId());
     }
 
     public MessageResponse registerUser(SignupRequest signUpRequest) {
+
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             throw new RuntimeException("Error: Username is already taken!");
         }
@@ -75,7 +84,9 @@ public class AuthService {
         }
 
         Department dept = null;
+
         if (signUpRequest.getDeptId() != null) {
+
             dept = departmentRepository.findById(signUpRequest.getDeptId())
                     .orElseThrow(() -> new RuntimeException("Error: Department not found."));
         }
@@ -90,21 +101,29 @@ public class AuthService {
                 .build();
 
         Set<String> strRoles = signUpRequest.getRoles();
+
         Set<Role> roles = new HashSet<>();
 
         if (strRoles == null) {
+
             Role userRole = roleRepository.findByRoleName("ROLE_STUDENT")
                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+
             roles.add(userRole);
+
         } else {
+
             strRoles.forEach(role -> {
+
                 Role mappedRole = roleRepository.findByRoleName(role)
                         .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+
                 roles.add(mappedRole);
             });
         }
 
         user.setRoles(roles);
+
         userRepository.save(user);
 
         return new MessageResponse("User registered successfully!");

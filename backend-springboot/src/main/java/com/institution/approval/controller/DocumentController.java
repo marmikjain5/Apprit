@@ -39,6 +39,27 @@ public class DocumentController {
         List<ApprovalDocument> documents = documentService.getDocumentsByUser(userDetails.getId());
         return ResponseEntity.ok(documents);
     }
+
+    @GetMapping("/pending")
+    public ResponseEntity<List<ApprovalDocument>> getPendingDocuments(@AuthenticationPrincipal UserDetailsImpl userDetails) {
+        List<ApprovalDocument> documents = documentService.getPendingDocumentsForUser(userDetails.getId());
+        return ResponseEntity.ok(documents);
+    }
+
+    @PutMapping("/{id}/resubmit")
+    public ResponseEntity<?> resubmitDocument(
+            @PathVariable String id,
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("title") String title,
+            @RequestParam("description") String description,
+            @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        try {
+            ApprovalDocument document = documentService.resubmitDocument(id, file, title, description, userDetails.getId());
+            return ResponseEntity.ok(document);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Could not resubmit the file: " + e.getMessage());
+        }
+    }
     
     @GetMapping("/{id}")
     public ResponseEntity<ApprovalDocument> getDocument(@PathVariable String id) {

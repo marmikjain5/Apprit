@@ -4,8 +4,8 @@ import com.institution.approval.document.ApprovalDocument;
 import com.institution.approval.document.ApprovalLog;
 import com.institution.approval.entity.AuthorityMapping;
 import com.institution.approval.entity.User;
-import com.institution.approval.repository.ApprovalDocumentRepository;
-import com.institution.approval.repository.ApprovalLogRepository;
+import com.institution.approval.repository.mongo.ApprovalDocumentRepository;
+import com.institution.approval.repository.mongo.ApprovalLogRepository;
 import com.institution.approval.repository.AuthorityMappingRepository;
 import com.institution.approval.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,6 +78,14 @@ public class ApprovalWorkflowService {
             document.setUpdatedAt(LocalDateTime.now());
             documentRepository.save(document);
             notificationService.sendNotification(document.getUploadedBy(), documentId, "Your document was REJECTED.");
+            return document;
+        }
+
+        if (action.equalsIgnoreCase("REQUEST_CHANGES") || action.equalsIgnoreCase("CHANGES_REQUESTED")) {
+            document.setStatus("CHANGES_REQUESTED");
+            document.setUpdatedAt(LocalDateTime.now());
+            documentRepository.save(document);
+            notificationService.sendNotification(document.getUploadedBy(), documentId, "Changes were requested for your document. Reason: " + comments);
             return document;
         }
 

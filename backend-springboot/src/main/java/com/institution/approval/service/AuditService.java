@@ -2,8 +2,8 @@ package com.institution.approval.service;
 
 import com.institution.approval.document.ApprovalLog;
 import com.institution.approval.document.BlockchainRecord;
-import com.institution.approval.repository.ApprovalLogRepository;
-import com.institution.approval.repository.BlockchainRecordRepository;
+import com.institution.approval.repository.mongo.ApprovalLogRepository;
+import com.institution.approval.repository.mongo.BlockchainRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

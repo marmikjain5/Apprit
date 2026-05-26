@@ -31,7 +31,7 @@ export const routes: Routes = [
     path: 'authority-dashboard', 
     component: AuthorityDashboardComponent,
     canActivate: [AuthGuard, RoleGuard],
-    data: { roles: ['ROLE_HOD', 'ROLE_DEAN', 'ROLE_PRINCIPAL', 'ROLE_FACULTY'] }
+    data: { roles: ['ROLE_HOD', 'ROLE_DEAN', 'ROLE_PRINCIPAL', 'ROLE_FACULTY', 'ROLE_CLUB_COORDINATOR'] }
   },
 
   { path: '**', redirectTo: 'login' }

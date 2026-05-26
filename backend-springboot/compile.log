@@ -1,0 +1,417 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.marmik.apprit:approval >---------------------
+[INFO] Building approval 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ approval ---
+[INFO] Deleting C:\Users\ACER\Apprit\Apprit\backend-springboot\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ approval ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ approval ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 38 source files with javac [debug parameters release 21] to target\classes
+[INFO] Annotation processing is enabled because one or more processors were found
+  on the class path. A future release of javac may disable annotation processing
+  unless at least one processor is specified by name (-processor), or a search
+  path is specified (--processor-path, --processor-module-path), or annotation
+  processing is enabled explicitly (-proc:only, -proc:full).
+  Use -Xlint:-options to suppress this message.
+  Use -proc:none to disable annotation processing.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[7,49] cannot access com.institution.approval.repository.mongo.ApprovalDocumentRepository
+  bad source file: C:\Users\ACER\Apprit\Apprit\backend-springboot\src\main\java\com\institution\approval\repository\mongo\ApprovalDocumentRepository.java
+    file does not contain class com.institution.approval.repository.mongo.ApprovalDocumentRepository
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/repository/mongo/ApprovalDocumentRepository.java:[10,8] interface ApprovalLogRepository is public, should be declared in a file named ApprovalLogRepository.java
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/repository/mongo/ApprovalLogRepository.java:[10,8] duplicate class: com.institution.approval.repository.mongo.ApprovalLogRepository
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[21,13] cannot find symbol
+  symbol:   class ApprovalDocumentRepository
+  location: class com.institution.approval.service.ApprovalWorkflowService
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/DocumentService.java:[27,13] cannot find symbol
+  symbol:   class ApprovalDocumentRepository
+  location: class com.institution.approval.service.DocumentService
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[35,35] cannot find symbol
+  symbol:   method setRoleName(java.lang.String)
+  location: variable r of type com.institution.approval.entity.Role
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[41,47] cannot find symbol
+  symbol:   method setDeptName(java.lang.String)
+  location: variable d of type com.institution.approval.entity.Department
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[64,16] cannot find symbol
+  symbol:   method setDepartment(com.institution.approval.entity.Department)
+  location: variable mapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[65,16] cannot find symbol
+  symbol:   method setRequiredRole(com.institution.approval.entity.Role)
+  location: variable mapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[66,16] cannot find symbol
+  symbol:   method setLevelOrder(int)
+  location: variable mapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/ApprovalController.java:[29,36] cannot find symbol
+  symbol:   method getAction()
+  location: variable approvalRequest of type com.institution.approval.dto.ApprovalRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/ApprovalController.java:[30,36] cannot find symbol
+  symbol:   method getComments()
+  location: variable approvalRequest of type com.institution.approval.dto.ApprovalRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[45,22] cannot find symbol
+  symbol:   method getStatus()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[45,65] cannot find symbol
+  symbol:   method getStatus()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[51,63] cannot find symbol
+  symbol:   method getDeptId()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[51,85] cannot find symbol
+  symbol:   method getCurrentLevel()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[54,35] cannot find symbol
+  symbol:   method getRoles()
+  location: variable approver of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[55,69] cannot find symbol
+  symbol:   method getRequiredRole()
+  location: variable currentMapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[62,38] cannot find symbol
+  symbol:   method builder()
+  location: class com.institution.approval.document.ApprovalLog
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[65,45] cannot find symbol
+  symbol:   method getRequiredRole()
+  location: variable currentMapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[68,32] cannot find symbol
+  symbol:   method getCurrentLevel()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[77,21] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[78,21] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[80,58] cannot find symbol
+  symbol:   method getUploadedBy()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[86,70] cannot find symbol
+  symbol:   method getDeptId()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[90,21] cannot find symbol
+  symbol:   method getCurrentLevel()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[91,21] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[92,58] cannot find symbol
+  symbol:   method getUploadedBy()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[94,21] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[95,46] cannot find symbol
+  symbol:   method getCurrentLevel()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[96,129] cannot find symbol
+  symbol:   method getCurrentLevel()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[96,58] cannot find symbol
+  symbol:   method getUploadedBy()
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[99,17] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[34,50] cannot find symbol
+  symbol:   method getRoles()
+  location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[39,21] cannot find symbol
+  symbol:   method getUserId()
+  location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[40,21] cannot find symbol
+  symbol:   method getUsername()
+  location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[41,21] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[42,21] cannot find symbol
+  symbol:   method getPasswordHash()
+  location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/BlockchainService.java:[74,55] cannot find symbol
+  symbol:   method builder()
+  location: class com.institution.approval.document.BlockchainRecord
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/BlockchainService.java:[104,55] cannot find symbol
+  symbol:   method builder()
+  location: class com.institution.approval.document.BlockchainRecord
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/NotificationService.java:[17,49] cannot find symbol
+  symbol:   method builder()
+  location: class com.institution.approval.document.Notification
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/NotificationService.java:[32,18] cannot find symbol
+  symbol:   method setIsRead(boolean)
+  location: variable notif of type com.institution.approval.document.Notification
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/AuthController.java:[26,53] constructor MessageResponse in class com.institution.approval.dto.MessageResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/AuthController.java:[36,53] constructor MessageResponse in class com.institution.approval.dto.MessageResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[54,37] cannot find symbol
+  symbol:   method getUsername()
+  location: variable loginRequest of type com.institution.approval.dto.LoginRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[55,37] cannot find symbol
+  symbol:   method getPassword()
+  location: variable loginRequest of type com.institution.approval.dto.LoginRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[67,16] constructor JwtResponse in class com.institution.approval.dto.JwtResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String,java.lang.Long,java.lang.String,java.lang.String,java.util.List<java.lang.String>
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[77,58] cannot find symbol
+  symbol:   method getUsername()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[81,55] cannot find symbol
+  symbol:   method getEmail()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[87,26] cannot find symbol
+  symbol:   method getDeptId()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[89,63] cannot find symbol
+  symbol:   method getDeptId()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[93,25] cannot find symbol
+  symbol:   method builder()
+  location: class com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[94,40] cannot find symbol
+  symbol:   method getUsername()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[95,37] cannot find symbol
+  symbol:   method getEmail()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[96,59] cannot find symbol
+  symbol:   method getPassword()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[97,41] cannot find symbol
+  symbol:   method getFirstName()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[98,40] cannot find symbol
+  symbol:   method getLastName()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[102,45] cannot find symbol
+  symbol:   method getRoles()
+  location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[124,13] cannot find symbol
+  symbol:   method setRoles(java.util.Set<com.institution.approval.entity.Role>)
+  location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[128,16] constructor MessageResponse in class com.institution.approval.dto.MessageResponse cannot be applied to given types;
+  required: no arguments
+  found:    java.lang.String
+  reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/DocumentService.java:[49,53] cannot find symbol
+  symbol:   method builder()
+  location: class com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/DocumentService.java:[64,60] cannot find symbol
+  symbol:   method getId()
+  location: variable savedDoc of type com.institution.approval.document.ApprovalDocument
+[INFO] 62 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.361 s
+[INFO] Finished at: 2026-05-26T21:06:31+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project approval: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[7,49] cannot access com.institution.approval.repository.mongo.ApprovalDocumentRepository
+[ERROR]   bad source file: C:\Users\ACER\Apprit\Apprit\backend-springboot\src\main\java\com\institution\approval\repository\mongo\ApprovalDocumentRepository.java
+[ERROR]     file does not contain class com.institution.approval.repository.mongo.ApprovalDocumentRepository
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/repository/mongo/ApprovalDocumentRepository.java:[10,8] interface ApprovalLogRepository is public, should be declared in a file named ApprovalLogRepository.java
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/repository/mongo/ApprovalLogRepository.java:[10,8] duplicate class: com.institution.approval.repository.mongo.ApprovalLogRepository
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[21,13] cannot find symbol
+[ERROR]   symbol:   class ApprovalDocumentRepository
+[ERROR]   location: class com.institution.approval.service.ApprovalWorkflowService
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/DocumentService.java:[27,13] cannot find symbol
+[ERROR]   symbol:   class ApprovalDocumentRepository
+[ERROR]   location: class com.institution.approval.service.DocumentService
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[35,35] cannot find symbol
+[ERROR]   symbol:   method setRoleName(java.lang.String)
+[ERROR]   location: variable r of type com.institution.approval.entity.Role
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[41,47] cannot find symbol
+[ERROR]   symbol:   method setDeptName(java.lang.String)
+[ERROR]   location: variable d of type com.institution.approval.entity.Department
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[64,16] cannot find symbol
+[ERROR]   symbol:   method setDepartment(com.institution.approval.entity.Department)
+[ERROR]   location: variable mapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[65,16] cannot find symbol
+[ERROR]   symbol:   method setRequiredRole(com.institution.approval.entity.Role)
+[ERROR]   location: variable mapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/config/DataSeeder.java:[66,16] cannot find symbol
+[ERROR]   symbol:   method setLevelOrder(int)
+[ERROR]   location: variable mapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/ApprovalController.java:[29,36] cannot find symbol
+[ERROR]   symbol:   method getAction()
+[ERROR]   location: variable approvalRequest of type com.institution.approval.dto.ApprovalRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/ApprovalController.java:[30,36] cannot find symbol
+[ERROR]   symbol:   method getComments()
+[ERROR]   location: variable approvalRequest of type com.institution.approval.dto.ApprovalRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[45,22] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[45,65] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[51,63] cannot find symbol
+[ERROR]   symbol:   method getDeptId()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[51,85] cannot find symbol
+[ERROR]   symbol:   method getCurrentLevel()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[54,35] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable approver of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[55,69] cannot find symbol
+[ERROR]   symbol:   method getRequiredRole()
+[ERROR]   location: variable currentMapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[62,38] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.institution.approval.document.ApprovalLog
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[65,45] cannot find symbol
+[ERROR]   symbol:   method getRequiredRole()
+[ERROR]   location: variable currentMapping of type com.institution.approval.entity.AuthorityMapping
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[68,32] cannot find symbol
+[ERROR]   symbol:   method getCurrentLevel()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[77,21] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[78,21] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[80,58] cannot find symbol
+[ERROR]   symbol:   method getUploadedBy()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[86,70] cannot find symbol
+[ERROR]   symbol:   method getDeptId()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[90,21] cannot find symbol
+[ERROR]   symbol:   method getCurrentLevel()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[91,21] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[92,58] cannot find symbol
+[ERROR]   symbol:   method getUploadedBy()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[94,21] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[95,46] cannot find symbol
+[ERROR]   symbol:   method getCurrentLevel()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[96,129] cannot find symbol
+[ERROR]   symbol:   method getCurrentLevel()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[96,58] cannot find symbol
+[ERROR]   symbol:   method getUploadedBy()
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/ApprovalWorkflowService.java:[99,17] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable document of type com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[34,50] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[39,21] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[40,21] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[41,21] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/security/UserDetailsImpl.java:[42,21] cannot find symbol
+[ERROR]   symbol:   method getPasswordHash()
+[ERROR]   location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/BlockchainService.java:[74,55] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.institution.approval.document.BlockchainRecord
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/BlockchainService.java:[104,55] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.institution.approval.document.BlockchainRecord
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/NotificationService.java:[17,49] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.institution.approval.document.Notification
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/NotificationService.java:[32,18] cannot find symbol
+[ERROR]   symbol:   method setIsRead(boolean)
+[ERROR]   location: variable notif of type com.institution.approval.document.Notification
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/AuthController.java:[26,53] constructor MessageResponse in class com.institution.approval.dto.MessageResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/controller/AuthController.java:[36,53] constructor MessageResponse in class com.institution.approval.dto.MessageResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[54,37] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable loginRequest of type com.institution.approval.dto.LoginRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[55,37] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable loginRequest of type com.institution.approval.dto.LoginRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[67,16] constructor JwtResponse in class com.institution.approval.dto.JwtResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String,java.lang.Long,java.lang.String,java.lang.String,java.util.List<java.lang.String>
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[77,58] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[81,55] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[87,26] cannot find symbol
+[ERROR]   symbol:   method getDeptId()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[89,63] cannot find symbol
+[ERROR]   symbol:   method getDeptId()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[93,25] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[94,40] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[95,37] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[96,59] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[97,41] cannot find symbol
+[ERROR]   symbol:   method getFirstName()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[98,40] cannot find symbol
+[ERROR]   symbol:   method getLastName()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[102,45] cannot find symbol
+[ERROR]   symbol:   method getRoles()
+[ERROR]   location: variable signUpRequest of type com.institution.approval.dto.SignupRequest
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[124,13] cannot find symbol
+[ERROR]   symbol:   method setRoles(java.util.Set<com.institution.approval.entity.Role>)
+[ERROR]   location: variable user of type com.institution.approval.entity.User
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/AuthService.java:[128,16] constructor MessageResponse in class com.institution.approval.dto.MessageResponse cannot be applied to given types;
+[ERROR]   required: no arguments
+[ERROR]   found:    java.lang.String
+[ERROR]   reason: actual and formal argument lists differ in length
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/DocumentService.java:[49,53] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.institution.approval.document.ApprovalDocument
+[ERROR] /C:/Users/ACER/Apprit/Apprit/backend-springboot/src/main/java/com/institution/approval/service/DocumentService.java:[64,60] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedDoc of type com.institution.approval.document.ApprovalDocument
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

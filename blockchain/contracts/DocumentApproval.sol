@@ -25,8 +25,6 @@ contract DocumentApproval {
 
     // 1. Store the initial document hash
     function storeDocumentHash(string memory _docId, string memory _sha256Hash, uint256 _uploadedBy) public {
-        require(!documents[_docId].exists, "Document already exists on blockchain!");
-
         Document storage doc = documents[_docId];
         doc.sha256Hash = _sha256Hash;
         doc.uploadedBy = _uploadedBy;

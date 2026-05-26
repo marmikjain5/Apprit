@@ -19,14 +19,16 @@ public class UserDetailsImpl implements UserDetails {
     @JsonIgnore
     private String password;
 
+    private Long deptId;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, String email, String password,
+    public UserDetailsImpl(Long id, String username, String email, String password, Long deptId,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.deptId = deptId;
         this.authorities = authorities;
     }
 
@@ -35,11 +37,14 @@ public class UserDetailsImpl implements UserDetails {
                 .map(role -> new SimpleGrantedAuthority(role.getRoleName()))
                 .collect(Collectors.toList());
 
+        Long deptId = user.getDepartment() != null ? user.getDepartment().getDeptId() : null;
+
         return new UserDetailsImpl(
                 user.getUserId(),
                 user.getUsername(),
                 user.getEmail(),
                 user.getPasswordHash(),
+                deptId,
                 authorities);
     }
 
@@ -50,6 +55,10 @@ public class UserDetailsImpl implements UserDetails {
 
     public Long getId() {
         return id;
+    }
+
+    public Long getDeptId() {
+        return deptId;
     }
 
     public String getEmail() {
