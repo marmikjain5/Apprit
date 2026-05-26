@@ -45,3 +45,6 @@ build/
 *.pyo
 .pytest_cache/
 
+# Environment Variables
+.env
+*.env
