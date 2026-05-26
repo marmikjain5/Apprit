@@ -20,6 +20,8 @@ public class ApprovalLog {
 
     private Long approverId;
 
+    private String approverName;
+
     private String approverRole;
 
     private String action;

@@ -96,4 +96,19 @@ export class DocumentService {
       })
     });
   }
+
+  getDocumentHistory(documentId: string): Observable<any> {
+    let token = '';
+    const stored = localStorage.getItem('currentUser');
+    if (stored) {
+      const user = JSON.parse(stored);
+      token = user.token || '';
+    }
+
+    return this.http.get(`${API_URL}${documentId}/history`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${token}`
+      })
+    });
+  }
 }

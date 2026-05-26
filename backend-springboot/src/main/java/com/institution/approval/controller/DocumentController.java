@@ -19,6 +19,9 @@ public class DocumentController {
     @Autowired
     private DocumentService documentService;
 
+    @Autowired
+    private com.institution.approval.service.AuditService auditService;
+
     @PostMapping("/upload")
     public ResponseEntity<?> uploadDocument(
             @RequestParam("file") MultipartFile file,
@@ -64,5 +67,36 @@ public class DocumentController {
     @GetMapping("/{id}")
     public ResponseEntity<ApprovalDocument> getDocument(@PathVariable String id) {
         return ResponseEntity.ok(documentService.getDocumentById(id));
+    }
+
+    @GetMapping("/{id}/history")
+    public ResponseEntity<List<com.institution.approval.document.ApprovalLog>> getDocumentHistory(@PathVariable String id) {
+        return ResponseEntity.ok(auditService.getDocumentApprovalHistory(id));
+    }
+
+    @GetMapping("/download/{fileName:.+}")
+    public ResponseEntity<org.springframework.core.io.Resource> downloadFile(
+            @PathVariable String fileName,
+            jakarta.servlet.http.HttpServletRequest request) {
+        try {
+            java.nio.file.Path filePath = java.nio.file.Paths.get("uploads").resolve(fileName).normalize();
+            org.springframework.core.io.Resource resource = new org.springframework.core.io.UrlResource(filePath.toUri());
+            
+            if (resource.exists()) {
+                String contentType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+                if (contentType == null) {
+                    contentType = "application/octet-stream";
+                }
+                
+                return ResponseEntity.ok()
+                        .contentType(org.springframework.http.MediaType.parseMediaType(contentType))
+                        .header(org.springframework.http.HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + resource.getFilename() + "\"")
+                        .body(resource);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 }

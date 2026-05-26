@@ -58,10 +58,19 @@ public class ApprovalWorkflowService {
             throw new RuntimeException("User does not have the required role to approve at this level.");
         }
 
+        String fullName = "";
+        if (approver.getFirstName() != null && !approver.getFirstName().isEmpty()) {
+            fullName = approver.getFirstName() + " " + (approver.getLastName() != null ? approver.getLastName() : "");
+        }
+        if (fullName.trim().isEmpty()) {
+            fullName = approver.getUsername();
+        }
+
         // Record Approval Log
         ApprovalLog log = ApprovalLog.builder()
                 .documentId(documentId)
                 .approverId(approverId)
+                .approverName(fullName)
                 .approverRole(currentMapping.getRequiredRole().getRoleName())
                 .action(action)
                 .comments(comments)
